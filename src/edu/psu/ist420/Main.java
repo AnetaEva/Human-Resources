@@ -545,6 +545,10 @@ class HRFINALL extends JPanel implements ActionListener {
 
     }
 
+    /**
+     * Method: inputs a new employee
+     * @param evt
+     */
     public void actionPerformed(ActionEvent evt) {
         boolean sex = true;
         boolean isActive = true;
@@ -775,9 +779,17 @@ class HRFINALL extends JPanel implements ActionListener {
         }
     }
 
+    // REPORTS BEGIN  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     // Method name: birthday
     // Purpose: compares employee's birthdays to current date, prompts user to
     // email employee
+
+    /**
+     * Method: Employee birthday
+     * @param employeeList
+     * @throws IOException
+     * @throws URISyntaxException
+     */
     public static void birthday(ArrayList<Employee> employeeList)
             throws IOException, URISyntaxException {
         String bDay;
@@ -894,8 +906,11 @@ class HRFINALL extends JPanel implements ActionListener {
 
     }
 
-    // Method name: overview
-    // Purpose: Statistics of all the employees
+    /**
+     * Method name: Overview / Statistics of all the employees
+     * @param employeeList
+     */
+
     public static void overview(ArrayList<Employee> employeeList) {
         System.out.println("\nDatabase Overview: ");
         int activeCount = 0;
@@ -924,6 +939,8 @@ class HRFINALL extends JPanel implements ActionListener {
             totalSal += e.getSalary();
             totalAge += e.getAge();
         }
+
+        // OVERVIEW BUTTON/SCREEN --------------------------------------------------------------------------------------------
         // Uses information to print out totals and averages
         int size = employeeList.size();
         display.setText("Overview:\n\nNumber of active employees: "
@@ -944,6 +961,12 @@ class HRFINALL extends JPanel implements ActionListener {
 
     }
 
+    /**
+     *
+     * @param employeeList
+     * @param first
+     * @param last
+     */
     // Method name: display
     // Purpose: Displays employee information
     public static void display(ArrayList<Employee> employeeList, String first,
@@ -1046,8 +1069,12 @@ class HRFINALL extends JPanel implements ActionListener {
 
     }
 
-    // Method name: viewChars
-    // Purpose: View a list of employees by characteristics
+    /**
+     * Method: View a list of employees by characteristics
+     * @param employeeList
+     * @param choice
+     */
+
     public static void viewChars(ArrayList<Employee> employeeList, String choice) {
 
         display.setText("Employees by Characteristic:\n\n");
@@ -1205,8 +1232,12 @@ class HRFINALL extends JPanel implements ActionListener {
         }
     }
 
-    // Method name: sort
-    // Purpose: Sorts the list of employees by characteristics
+    /**
+     * Method: Sorts the list of employees by characteristics
+     * @param employeeList
+     * @param choice
+     */
+
     public static void sort(ArrayList<Employee> employeeList, int choice) {
         boolean cleared = false;
         int clearCount = 0;
@@ -1352,9 +1383,15 @@ class HRFINALL extends JPanel implements ActionListener {
         }
 
     }
+    // REPORTS END  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    // Method name: editProfile
-    // Purpose: Access arraylist, find employee and edit information
+    /**
+     * Method: Access arraylist, find employee and edit information
+     * @param employeeList
+     * @param first
+     * @param last
+     */
+
     public static void editProfile(ArrayList<Employee> employeeList,
                                    String first, String last) {
         ArrayList<Integer> sames = new ArrayList<Integer>();
@@ -1547,8 +1584,12 @@ class HRFINALL extends JPanel implements ActionListener {
         }
     }
 
-    // Method name: delete
-    // Purpose: Finding an employee from the list and remove it
+    /**
+     * Method: Finding an employee from the list and remove it
+     * @param first
+     * @param last
+     */
+
     public static void delete(String first, String last) {
         ArrayList<Integer> sames = new ArrayList<Integer>();
         ArrayList<Employee> samesEmp = new ArrayList<Employee>();
@@ -1872,8 +1913,10 @@ class HRFINALL extends JPanel implements ActionListener {
         });
     }
 
-    // Name: Employee Class
-    // Purpose: Stores employee information
+    /**
+     * Method: Stores employee information
+     */
+
     public static class Employee {
         private String firstName;
         private String lastName;
